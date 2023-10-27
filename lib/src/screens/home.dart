@@ -6,6 +6,7 @@ import 'package:travel_news_app/src/screens/profile.dart';
 import 'package:travel_news_app/src/widgets/news_builder.dart';
 import 'package:travel_news_app/src/widgets/search_bar_builder.dart';
 import 'package:travel_news_app/src/constants/theme_colors.dart';
+import 'package:travel_news_app/src/widgets/shorts_builder.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -35,6 +36,20 @@ class _HomePageState extends State<HomePage> {
       screenWidth,
     );
 
+    List<Widget> selectedIcons = [
+      SvgPicture.asset('assets/home_selected_icon.svg'),
+      SvgPicture.asset('assets/bookmark_selected_icon.svg'),
+      SvgPicture.asset('assets/notification_selected_icon.svg'),
+      SvgPicture.asset('assets/profile_selected_icon.svg'),
+    ];
+
+    List<Widget> unselectedIcons = [
+      SvgPicture.asset('assets/home_unselected_icon.svg'),
+      SvgPicture.asset('assets/bookmark_unselected_icon.svg'),
+      SvgPicture.asset('assets/notification_unselected_icon.svg'),
+      SvgPicture.asset('assets/profile_unselected_icon.svg'),
+    ];
+
     List<Widget> newsItems = [
       buildNews(
         'assets/news1_image.png',
@@ -58,18 +73,25 @@ class _HomePageState extends State<HomePage> {
       ),
     ];
 
-    List<Widget> selectedIcons = [
-      SvgPicture.asset('assets/home_selected_icon.svg'),
-      SvgPicture.asset('assets/bookmark_selected_icon.svg'),
-      SvgPicture.asset('assets/notification_selected_icon.svg'),
-      SvgPicture.asset('assets/profile_selected_icon.svg'),
-    ];
-
-    List<Widget> unselectedIcons = [
-      SvgPicture.asset('assets/home_unselected_icon.svg'),
-      SvgPicture.asset('assets/bookmark_unselected_icon.svg'),
-      SvgPicture.asset('assets/notification_unselected_icon.svg'),
-      SvgPicture.asset('assets/profile_unselected_icon.svg'),
+    List<Widget> shortsItems = [
+      buildShorts(
+        'assets/shorts1_image.png',
+        'assets/play_icon.svg',
+        'Top Trending Islands in 2022',
+        'assets/eye_icon.svg',
+        '40,999',
+        screenHeight,
+        screenWidth,
+      ),
+      buildShorts(
+        'assets/shorts1_image.png',
+        'assets/play_icon.svg',
+        'Top Trending Islands in 2022',
+        'assets/eye_icon.svg',
+        '40,999',
+        screenHeight,
+        screenWidth,
+      ),
     ];
 
     void onItemTapped(int index) {
@@ -168,9 +190,13 @@ class _HomePageState extends State<HomePage> {
               ),
               searchBar,
               Padding(
-                padding: EdgeInsets.only(right: screenWidth * 0.08),
+                padding: EdgeInsets.only(
+                  right: screenWidth * 0.08,
+                  bottom: screenHeight * 0.02,
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('#Health', style: commonTextStyle),
                     Text('#Music', style: commonTextStyle),
@@ -179,15 +205,69 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              Expanded(
+              SizedBox(
+                height: screenHeight * 0.4,
                 child: ListView.builder(
                   physics: const BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemCount: newsItems.length,
                   itemBuilder: (BuildContext context, int index) {
                     return Padding(
-                      padding: EdgeInsets.only(right: screenWidth * 0.069),
+                      padding: EdgeInsets.only(
+                        top: screenHeight * 0.002,
+                        left: screenWidth * 0.004,
+                        right: screenWidth * 0.05,
+                      ),
                       child: newsItems[index],
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  right: screenWidth * 0.08,
+                  bottom: screenHeight * 0.025,
+                  top: screenHeight * 0.01,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Shorts For You',
+                      style: TextStyle(
+                        fontFamily: 'Gellix',
+                        fontSize: 17,
+                        fontWeight: FontWeight.w700,
+                        color: themeBlackFont,
+                      ),
+                    ),
+                    Text(
+                      'View All',
+                      style: TextStyle(
+                        fontFamily: 'Gellix',
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                        color: themeBlue,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: screenHeight * 0.10,
+                child: ListView.builder(
+                  physics: const BouncingScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  itemCount: shortsItems.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Padding(
+                      padding: EdgeInsets.only(
+                        top: screenHeight * 0.002,
+                        bottom: screenHeight * 0.002,
+                        left: screenWidth * 0.004,
+                        right: screenWidth * 0.05,
+                      ),
+                      child: shortsItems[index],
                     );
                   },
                 ),
