@@ -154,7 +154,7 @@ class _ProfileDetailsPageState extends State<ProfileDetailsPage> {
               Padding(
                 padding: EdgeInsets.only(
                   top: height * 0.03,
-                  bottom: height * 0.03,
+                  bottom: height * 0.02,
                   right: width * 0.07,
                 ),
                 child: Text(
@@ -169,7 +169,7 @@ class _ProfileDetailsPageState extends State<ProfileDetailsPage> {
               ),
               Padding(
                 padding: EdgeInsets.only(
-                  bottom: height * 0.03,
+                  bottom: height * 0.02,
                   right: width * 0.07,
                 ),
                 child: Container(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:travel_news_app/src/constants/theme_colors.dart';
 import 'package:travel_news_app/src/models/news_details_content.dart';
 import 'package:travel_news_app/src/widgets/back_button_builder.dart';
@@ -87,7 +86,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                       top: screenHeight * 0.03,
                     ),
                     child: SingleChildScrollView(
-                      padding: EdgeInsets.only(bottom: screenHeight * 0.03),
+                      padding: EdgeInsets.only(bottom: screenHeight * 0.05),
                       child: Column(
                         children: [
                           Text(

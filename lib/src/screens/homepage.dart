@@ -122,7 +122,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       bottomNavigationBar: buildNavigationBar(currentIndex, onItemTapped),
-      backgroundColor: themeBackground,
+      backgroundColor: white,
       body: SafeArea(
         top: true,
         bottom: true,
