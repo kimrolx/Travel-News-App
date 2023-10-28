@@ -26,7 +26,7 @@ Widget buildSearchBar(
           child: Text(
             text,
             style: TextStyle(
-              fontFamily: 'Gellix',
+              fontFamily: 'GellixMedium',
               fontSize: 13,
               fontWeight: FontWeight.w400,
               color: themeGrayFont,

@@ -45,9 +45,9 @@ Widget buildShorts(String image, String playIcon, String headerText,
         Flexible(
           child: Container(
             margin: EdgeInsets.only(
-              left: screenWidth * 0.02,
+              left: screenWidth * 0.01,
               right: screenWidth * 0.03,
-              top: screenHeight * 0.025,
+              top: screenHeight * 0.017,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,10 +55,10 @@ Widget buildShorts(String image, String playIcon, String headerText,
                 Text(
                   headerText,
                   style: TextStyle(
-                    fontFamily: 'Gellix',
+                    fontFamily: 'GellixSemiBold',
                     fontSize: 13,
-                    fontWeight: FontWeight.w600,
-                    color: themeBlackFont,
+                    fontWeight: FontWeight.w700,
+                    color: black,
                   ),
                 ),
                 Padding(
@@ -70,9 +70,9 @@ Widget buildShorts(String image, String playIcon, String headerText,
                       Text(
                         text,
                         style: TextStyle(
-                          fontFamily: 'Gellix',
+                          fontFamily: 'GellixSemiBold',
                           fontSize: 12,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w600,
                           color: themeGrayFont,
                         ),
                       ),

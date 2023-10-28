@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^2.0.8
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -20,3 +21,17 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+  fonts: 
+    - family: GellixSemiBold
+      fonts:
+        - asset: assets/fonts/Gellix-SemiBold.ttf
+    - family: GellixBold
+      fonts:
+        - asset: assets/fonts/Gellix-Bold.ttf
+    - family: GellixLight
+      fonts:
+        - asset: assets/fonts/Gellix-Light.ttf
+    - family: GellixMedium
+      fonts:
+        - asset: assets/fonts/Gellix-Medium.ttf
+    
