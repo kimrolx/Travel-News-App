@@ -20,7 +20,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
   final commonTextStyle = TextStyle(
     fontFamily: 'GellixMedium',
     fontSize: 13,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w500,
     color: themeGrayFont,
   );
 
@@ -46,7 +46,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
       body: SafeArea(
         child: Stack(
           children: [
-            buildCarousel(images, screenWidth, screenHeight),
+            MyCarouselWidget(imagePaths: images),
             Padding(
               padding: EdgeInsets.only(
                 left: screenWidth * 0.08,
